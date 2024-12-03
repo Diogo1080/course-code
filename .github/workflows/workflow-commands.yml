@@ -1,10 +1,18 @@
 ﻿name: Workflow Commands
 
-on:  [push]
+on: [ push ]
 
-jobs: 
+jobs:
   testing-wf-commands:
     runs-on: ubuntu-latest
     steps:
       - name: setting an error message
         run: echo "::error::Missing semicolon"
+      - name: Setting an error message with params
+        run: echo "::error title:Error tittle, file=app.js, line=2, endLine=3, col=5, endColumn=7:: Missing Semicolon"
+      - name: Setting an debug message with params
+        run: echo "::debug title:debug tittle, file=app.js, line=2, endLine=3, col=5, endColumn=7:: Missing Semicolon"
+      - name: Setting an warning message with params
+        run: echo "::warning title:warning tittle, file=app.js, line=2, endLine=3, col=5, endColumn=7:: Missing Semicolon"
+      - name: Setting an notice message with params
+        run: echo "::notice title:notice tittle, file=app.js, line=2, endLine=3, col=5, endColumn=7:: Missing Semicolon"           
