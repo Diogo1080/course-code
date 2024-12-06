@@ -15,3 +15,12 @@ jobs:
           git checkout main
       - name: List Files After
         run: ls -a
+  checkout-Action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files Before
+        run: ls -a
+      - name: Checkout Action
+        uses: action/checkout@v3
+      - name: List Files After
+        run: ls -a
